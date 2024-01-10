@@ -61,7 +61,7 @@ cp /estate /custom_module/estate
 - [ ] Chapter 16: The final word
 
 ## References
-Tutorial - https://www.odoo.com/documentation/17.0/developer/tutorials.html \n
-Hot to install - https://www.odoo.com/documentation/17.0/administration/install/source.html, https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/02_setup.html
+- Tutorial - https://www.odoo.com/documentation/17.0/developer/tutorials.html 
+- Hot to install - https://www.odoo.com/documentation/17.0/administration/install/source.html, https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/02_setup.html
 
 
