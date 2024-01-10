@@ -62,6 +62,6 @@ cp /estate /custom_module/estate
 
 ## References
 - Tutorial - https://www.odoo.com/documentation/17.0/developer/tutorials.html 
-- Hot to install - https://www.odoo.com/documentation/17.0/administration/install/source.html, https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/02_setup.html
+- How to install - https://www.odoo.com/documentation/17.0/administration/install/source.html, https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/02_setup.html
 
 
