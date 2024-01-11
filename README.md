@@ -52,7 +52,7 @@ cp /estate /custom_module/estate
 - [x] Chapter 7: Basic Views
 - [x] Chapter 8: Relations Between Models
 - [x] Chapter 9: Computed Fields And Onchanges
-- [ ] Chapter 10: Ready For Some Action?
+- [x] Chapter 10: Ready For Some Action?
 - [ ] Chapter 11: Constraints
 - [ ] Chapter 12: Add The Sprinkles
 - [ ] Chapter 13: Inheritance
