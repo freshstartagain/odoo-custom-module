@@ -53,7 +53,7 @@ cp /estate /custom_module/estate
 - [x] Chapter 8: Relations Between Models
 - [x] Chapter 9: Computed Fields And Onchanges
 - [x] Chapter 10: Ready For Some Action?
-- [ ] Chapter 11: Constraints
+- [x] Chapter 11: Constraints
 - [ ] Chapter 12: Add The Sprinkles
 - [ ] Chapter 13: Inheritance
 - [ ] Chapter 14: Interact With Other Modules
