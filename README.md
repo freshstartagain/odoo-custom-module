@@ -54,11 +54,10 @@ cp /estate /custom_module/estate
 - [x] Chapter 9: Computed Fields And Onchanges
 - [x] Chapter 10: Ready For Some Action?
 - [x] Chapter 11: Constraints
-- [ ] Chapter 12: Add The Sprinkles
+- [x] Chapter 12: Add The Sprinkles
 - [ ] Chapter 13: Inheritance
 - [ ] Chapter 14: Interact With Other Modules
-- [ ] Chapter 15: A Brief History Of QWeb
-- [ ] Chapter 16: The final word
+
 
 ## References
 - Tutorial - https://www.odoo.com/documentation/17.0/developer/tutorials.html 

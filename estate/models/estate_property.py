@@ -9,6 +9,7 @@ class EstateProperty(models.Model):
         ("check_expected_price", "CHECK(expected_price > 0)", "The expected prcie must be strictly positive"),
         ("check_selling_price", "CHECK(selling_price >= 0)", "The offer price must be positive")
     ]
+    _order = "id desc"
 
     # Basic
     name = fields.Char("Title", required=True)
@@ -52,8 +53,8 @@ class EstateProperty(models.Model):
     property_type_id = fields.Many2one("estate.property.type", string="Property Type")
     user_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)
     buyer_id = fields.Many2one("res.partner", string="Buyer", readonly=True, copy=False)
-    property_tag_id = fields.Many2many("estate.property.tag", string="Property Tag")
     offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
+    tag_ids = fields.Many2many("estate.property.tag", string="Tags")
 
     total_area = fields.Float(string="Total Area (sqm)", compute="_compute_total_area")
 

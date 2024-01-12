@@ -9,13 +9,14 @@
                 <field name="postcode"/>
                 <field name="expected_price"/>
                 <field name="bedrooms"/>
-                <field name="living_area"/>
+                <field name="living_area" filter_domain="[('living_area', '>=', self)]"/>
                 <field name="facades"/>
                 <separator/>
                 <filter name="active" string="Active" domain="[('active', '=', True)]"/>
                 <filter name="active" string="Inactive" domain="[('active', '=', False)]"/>
                 <filter name="state" string="New" domain="[('state', '=', 'new')]"/>
                 <filter name="state" string="Offer Received" domain="[('state', '=', 'offer_received')]"/>
+                <filter string="Available" name="available" domain="[('state', 'in', ('new', 'offer_received'))]"/>
                 <group expand="1" string="Group By">
                     <filter name="postcode" string="Postcode" context="{'group_by':'postcode'}"/>
                 </group>
@@ -29,14 +30,15 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_sold" type="object" string="Sold"/>
-                    <button name="action_cancel" type="object" string="Cancel"/>
+                    <button name="action_sold" type="object" string="Sold" invisible="state  == 'sold' "/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state == 'sold'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,offer_received,offer_accepted,sold"/>
                 </header>
                 <sheet>
                     <group>
                         <group>
                             <field name="name"/>
-                            <field name="property_tag_id" widget="many2many_tags"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         </group>
                         <group>
                             <field name="postcode"/>
@@ -56,8 +58,8 @@
                                     <field name="facades"/>
                                     <field name="garage"/>
                                     <field name="garden"/>
-                                    <field name="garden_area"/>
-                                    <field name="garden_orientation"/>
+                                    <field name="garden_area" invisible="garden == False"/>
+                                    <field name="garden_orientation" invisible="garden == False"/>
                                     <field name="total_area"/>
                                 </group>
                             </page>
@@ -69,7 +71,7 @@
                             </page>
                             <page string="Offers">
                                 <group>
-                                    <field name="offer_ids"/>
+                                    <field name="offer_ids" readonly="state in ('offer_accepted', 'sold', 'canceled')"/>
                                 </group>
                             </page>
                         </notebook>
@@ -86,11 +88,13 @@
             <tree>
                 <field name="name"/>
                 <field name="postcode"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="bedrooms"/>
                 <field name="living_area"/>
                 <field name="expected_price"/>
                 <field name="selling_price"/>
-                <field name="date_availability"/>
+                <field name="date_availability" optional="hide"/>
+                <field name="state" invisible="1"/>
             </tree>
         </field>
     </record>
