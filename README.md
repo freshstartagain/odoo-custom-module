@@ -36,7 +36,8 @@ sed -n -e '/^Depends:/,/^Pre/ s/ python3-\(.*\),/python3-\1/p' debian/control | 
 cp /estate /custom_module/estate
 
 # 6. install estate custom module
-./odoo-bin --addons-path="addons/, custom_module/" -d $db-name -i estate
+./odoo-bin --addons-path="addons/, custom_modules/" -d $db-name -i estate
+./odoo-bin --addons-path="addons/, custom_modules/" -d $db-name -i estate-account
 
 # 7. make sure to activate developer mode on odoo settings, and update the list of apps.
 ```
@@ -56,7 +57,7 @@ cp /estate /custom_module/estate
 - [x] Chapter 11: Constraints
 - [x] Chapter 12: Add The Sprinkles
 - [x] Chapter 13: Inheritance
-- [ ] Chapter 14: Interact With Other Modules
+- [x] Chapter 14: Interact With Other Modules
 
 
 ## References
