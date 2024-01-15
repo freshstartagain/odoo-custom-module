@@ -93,3 +93,8 @@ class EstateProperty(models.Model):
         if "sold" in self.mapped("state"):
             raise UserError("Sold properties cannot be canceled.")
         return self.write({"state":"canceled"})
+
+    def unlink(self):
+        if not set(self.mapped("state")) <= {"new", "cancelled"}:
+            raise UserError("Only new and cancelled properties can be deleted.")
+        return super().unlink()

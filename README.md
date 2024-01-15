@@ -55,7 +55,7 @@ cp /estate /custom_module/estate
 - [x] Chapter 10: Ready For Some Action?
 - [x] Chapter 11: Constraints
 - [x] Chapter 12: Add The Sprinkles
-- [ ] Chapter 13: Inheritance
+- [x] Chapter 13: Inheritance
 - [ ] Chapter 14: Interact With Other Modules
 
 
