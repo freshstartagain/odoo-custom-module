@@ -1,6 +1,6 @@
 from odoo import fields, models
 
 class ResUser(models.Model):
-    _inherit = "res.user"
+    _inherit = "res.users"
 
-    property_ids = fieldsOne2many("estate.property", "user_id", string="Properties", domain=[("state", "in", ["new", "offer_received"])])
+    property_ids = fields.One2many("estate.property", "user_id", string="Properties", domain=[("state", "in", ["new", "offer_received"])])
